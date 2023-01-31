@@ -100,10 +100,9 @@ abstract public class Creature
             {
                 int damage = RandomUtility.randomInt(minDamage,
                                                      maxDamage);
-                System.out.println("Damage: " + damage);
                 opponent.currentHealth = Math.max(opponent.currentHealth - damage,
                                                   0);
-                break;
+                return;
             }
         }
     }
