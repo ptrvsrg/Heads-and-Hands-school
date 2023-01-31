@@ -9,5 +9,9 @@ public interface FactoryMethod
                     int max_health,
                     int min_damage,
                     int max_damage)
-            throws MaxHealthParamException, MaxDamageParamException, MinDamageParamException, AttackParamException, DefenseParamException;
+            throws MaxHealthParamException,
+                   MaxDamageParamException,
+                   MinDamageParamException,
+                   AttackParamException,
+                   DefenseParamException;
 }
