@@ -101,14 +101,14 @@ public class Game
                     }
                     default ->
                     {
-                        System.out.println("Unrecognized command");
+                        System.err.println("Unrecognized command");
                         printHelp();
                     }
                 }
             }
             catch (AllHealingsAreUsedException ex)
             {
-                System.out.println(ex.getMessage());
+                System.err.println(ex.getLocalizedMessage());
             }
             catch (AttackingDeadException |
                    AttackedDeadException ex)

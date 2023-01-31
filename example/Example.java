@@ -11,7 +11,7 @@ public class Example
         }
         catch(Exception ex)
         {
-            System.out.println(ex.getMessage());
+            System.err.println(ex.getLocalizedMessage());
         }
     }
 }
