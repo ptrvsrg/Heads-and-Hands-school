@@ -16,8 +16,8 @@ public class Game
    {
         int attack = RandomUtility.randomInt(1, Creature.MAX_ATTACK);
         int defense = RandomUtility.randomInt(1, Creature.MAX_DEFENSE);
-        int maxHealth = RandomUtility.randomInt(0, 100);
-        int minDamage = RandomUtility.randomInt(0, 20);
+        int maxHealth = RandomUtility.randomInt(1, 100);
+        int minDamage = RandomUtility.randomInt(1, 20);
         int maxDamage = RandomUtility.randomInt(minDamage, 20);
 
         return factory.create(attack,
