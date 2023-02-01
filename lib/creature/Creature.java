@@ -84,7 +84,7 @@ abstract public class Creature
                         1);
     }
 
-    public void attack(Creature opponent)
+    public final void attack(Creature opponent)
     {
         if (isDead())
             throw new AttackingDeadException();
