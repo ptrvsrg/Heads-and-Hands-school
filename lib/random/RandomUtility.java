@@ -4,7 +4,6 @@ public class RandomUtility
 {
     public static int randomInt(int min,
                                 int max)
-            throws IllegalArgumentException
     {
         if (min > max)
             throw new IllegalArgumentException("Param \"max\" " +
