@@ -85,7 +85,6 @@ abstract public class Creature
     }
 
     public void attack(Creature opponent)
-            throws AttackingDeadException, AttackedDeadException
     {
         if (isDead())
             throw new AttackingDeadException();
@@ -107,6 +106,5 @@ abstract public class Creature
         }
     }
 
-    public abstract void heal()
-            throws AllHealingsAreUsedException;
+    public abstract void heal();
 }
