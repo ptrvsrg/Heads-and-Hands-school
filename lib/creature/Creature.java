@@ -88,8 +88,6 @@ abstract public class Creature
     {
         if (isDead())
             throw new AttackingDeadException();
-        if (opponent.isDead())
-            throw new AttackedDeadException();
 
         int attackModifier = calculateAttackModifier(opponent);
 
