@@ -78,45 +78,53 @@ public class Game
                                 Creature monster)
     {
         Scanner scanner = new Scanner(System.in);
-        while (true)
+        do
         {
             String command = scanner.next();
-            try
+
+            switch (command)
             {
-                switch (command)
+                case "help" -> printHelp();
+                case "attack" ->
                 {
-                    case "help" -> printHelp();
-                    case "attack" ->
+                    monster.attack(player);
+
+                    try
                     {
-                        monster.attack(player);
                         player.attack(monster);
-                        System.out.println("Player health: " + player.getCurrentHealth());
-                        System.out.println("Monster health: " + monster.getCurrentHealth());
                     }
-                    case "heal" ->
+                    catch (AttackingDeadException ignored)
+                    {
+                    }
+
+                    System.out.println("Player health: " + player.getCurrentHealth());
+                    System.out.println("Monster health: " + monster.getCurrentHealth());
+                }
+                case "heal" ->
+                {
+                    try
                     {
                         player.heal();
-                        monster.attack(player);
-                        System.out.println("Player health: " + player.getCurrentHealth());
-                        System.out.println("Monster health: " + monster.getCurrentHealth());
                     }
-                    default ->
+                    catch (AllHealingsAreUsedException |
+                           FullHealthException ex)
                     {
-                        System.err.println("Unrecognized command");
-                        printHelp();
+                        System.err.println(ex.getLocalizedMessage());
+                        break;
                     }
+
+                    monster.attack(player);
+                    System.out.println("Player health: " + player.getCurrentHealth());
+                    System.out.println("Monster health: " + monster.getCurrentHealth());
+                }
+                default ->
+                {
+                    System.err.println("Unrecognized command");
+                    printHelp();
                 }
             }
-            catch (AllHealingsAreUsedException ex)
-            {
-                System.err.println(ex.getLocalizedMessage());
-            }
-            catch (AttackingDeadException |
-                   AttackedDeadException ex)
-            {
-                break;
-            }
         }
+        while (!player.isDead() && !monster.isDead());
 
         scanner.close();
     }
