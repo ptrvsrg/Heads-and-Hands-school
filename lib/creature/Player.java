@@ -30,7 +30,6 @@ class Player
 
     @Override
     public void heal()
-            throws AllHealingsAreUsedException
     {
         if (currentHealth == maxHealth)
             return;

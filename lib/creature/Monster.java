@@ -25,7 +25,6 @@ class Monster
 
     @Override
     public void heal()
-            throws UnsupportedOperationException
     {
         throw new UnsupportedOperationException("Unsupported operation");
     }
