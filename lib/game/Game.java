@@ -15,11 +15,22 @@ public class Game
         int minDamage = RandomUtility.randomInt(1, 20);
         int maxDamage = RandomUtility.randomInt(minDamage, 20);
 
-        return factory.create(attack,
-                              defense,
-                              maxHealth,
-                              minDamage,
-                              maxDamage);
+        try
+        {
+           return factory.create(attack,
+                                     defense,
+                                     maxHealth,
+                                     minDamage,
+                                     maxDamage);
+        }
+        catch(MaxHealthParamException |
+              MaxDamageParamException |
+              MinDamageParamException |
+              AttackParamException |
+              DefenseParamException ex)
+        {
+           throw new RuntimeException(ex);
+        }
     }
 
     private void printCreatureProperty(Creature creature)
