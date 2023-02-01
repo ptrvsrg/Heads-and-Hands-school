@@ -32,7 +32,7 @@ class Player
     public void heal()
     {
         if (currentHealth == maxHealth)
-            return;
+            throw new FullHealthException();
 
         if (currentHealingCount >= MAX_HEALING_COUNT)
             throw new AllHealingsAreUsedException();
