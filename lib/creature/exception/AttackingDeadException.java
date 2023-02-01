@@ -1,7 +1,7 @@
 package creature.exception;
 
 public class AttackingDeadException
-    extends Exception
+    extends RuntimeException
 {
     public AttackingDeadException()
     {

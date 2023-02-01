@@ -1,7 +1,7 @@
 package creature.exception;
 
 public class AllHealingsAreUsedException
-    extends Exception
+    extends RuntimeException
 {
     public AllHealingsAreUsedException()
     {
