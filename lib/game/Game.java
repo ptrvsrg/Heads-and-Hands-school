@@ -56,6 +56,7 @@ public class Game
 
         System.out.println("Player characteristics:");
         printCreatureProperty(player);
+        System.out.println();
 
         System.out.println("Creating monster...");
         MonsterFactory monsterFactory = new MonsterFactory();
@@ -63,15 +64,16 @@ public class Game
 
         System.out.println("Monster characteristics:");
         printCreatureProperty(monster);
+        System.out.println();
 
         System.out.println("Your battle begins...");
         processCommand(player,
                        monster);
 
         if (monster.isDead())
-            System.out.println("Player won");
+            System.out.println("PLAYER WON");
         else if (player.isDead())
-            System.out.println("Monster won");
+            System.out.println("MONSTER WON");
     }
 
     private void processCommand(Creature player,
