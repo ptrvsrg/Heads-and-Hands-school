@@ -8,12 +8,7 @@ import java.util.Scanner;
 public class Game
 {
     private Creature createCreature(FactoryMethod factory)
-            throws AttackParamException,
-                   DefenseParamException,
-                   MaxHealthParamException,
-                   MaxDamageParamException,
-                   MinDamageParamException
-   {
+    {
         int attack = RandomUtility.randomInt(1, Creature.MAX_ATTACK);
         int defense = RandomUtility.randomInt(1, Creature.MAX_DEFENSE);
         int maxHealth = RandomUtility.randomInt(1, 100);
@@ -43,11 +38,6 @@ public class Game
     }
 
     public void launch()
-            throws MaxHealthParamException,
-                   MaxDamageParamException,
-                   MinDamageParamException,
-                   AttackParamException,
-                   DefenseParamException
     {
         System.out.println("Creating player...");
         PlayerFactory playerFactory = new PlayerFactory();
